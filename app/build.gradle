@@ -71,17 +71,17 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
     // adding support for sdp for all layout
-    implementation 'com.intuit.sdp:sdp-android:1.0.6'
-    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
 
     //RetroFit Dependencies
-    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.google.code.gson:gson:2.10'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.4'
 
     //Coroutains"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1' //viewModel scope
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1' //lifecycle scope
     implementation 'androidx.fragment:fragment-ktx:1.5.4'
@@ -98,8 +98,11 @@ dependencies {
     // splash screen for android 12
     implementation 'androidx.core:core-splashscreen:1.0.0'
 
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation('com.google.dagger:hilt-android:2.44.2')
+    kapt('com.google.dagger:hilt-android-compiler:2.44.2')
+
+    // circular image view
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
 kapt {
     correctErrorTypes = true
