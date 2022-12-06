@@ -6,6 +6,7 @@ import com.neotrick.mvvmsample.utility_section.Resource
 
 class LoginCacheDataSourceImpl: LoginCacheDataSource {
     private lateinit var receivedResponse: Resource<LoginResponse>
+
     override suspend fun getLoginFromCache(): Resource<LoginResponse> {
         return receivedResponse
     }

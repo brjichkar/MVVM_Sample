@@ -40,25 +40,7 @@ class NetworkUtils {
         return activeNetwork != null && activeNetwork.isConnected
     }
 
-    @Provides
-    @Singleton
-    fun provideLoginRepository(loginRemoteDataSource: LoginRemoteDataSource): LoginRepository {
-        return LoginRepositoryImpl(loginRemoteDataSource)
-    }
 
-    @Singleton
-    @Provides
-    fun provideLoginRemoteDataSource(apiInterface: ApiInterface): LoginRemoteDataSource {
-        return LoginRemoteDataSourceImpl(apiInterface)
-    }
-
-    @Provides
-    @Singleton
-    fun provideRetrofit(client: OkHttpClient): Retrofit {
-        return Retrofit.Builder().baseUrl(BuildConfig.BASE_URL).client(client)
-            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
-            .build()
-    }
 
 
 
@@ -106,27 +88,5 @@ class NetworkUtils {
     }
 
 
-    @Provides
-    @Singleton
-    fun provideApi(retrofit: Retrofit): ApiInterface {
-        return retrofit.create(ApiInterface::class.java)
-    }
 
-    @Provides
-    @Singleton
-    fun provideApplication():MvvmApplication{
-        return MvvmApplication()
-    }
-
-    @Provides
-    @Singleton
-    fun provideContext(application: MvvmApplication,@ApplicationContext context: Context,): Context {
-        return context.applicationContext
-    }
-
-    @Provides
-    @Singleton
-    fun provideLoginViewModelFactory(loginUseCase: LoginUseCase):LoginViewModelFactory{
-        return LoginViewModelFactory(loginUseCase)
-    }
 }

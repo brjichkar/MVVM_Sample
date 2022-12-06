@@ -25,7 +25,7 @@ object CommonUtils {
         if (progressDialog.window != null) {
             progressDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         }
-        //progressDialog.setContentView(R.layout.progress_dialog)
+        progressDialog.setContentView(R.layout.progress_dialog)
         progressDialog.isIndeterminate = true
         progressDialog.setCancelable(false)
         progressDialog.setCanceledOnTouchOutside(false)
